@@ -107,7 +107,4 @@ $(function () {
 })
 
 </script>
-@if ()
-
-@endif
 @endsection
