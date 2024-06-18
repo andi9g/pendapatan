@@ -97,10 +97,10 @@
         <div class="card-body">
             <div class="text-right">
                 @php
-                    // foreach ($pemasukan as $item) {
-                        $jumlah = $item->sum("jumlahbarang");
-                        $harga = $item->sum("hargabarang");
-                    // }
+
+                    // $jumlah = $pemasukan->sum("jumlahbarang");
+                    // $harga = $pemasukan->sum("hargabarang");
+
                 @endphp
                 <div class="row">
                     <div class="col-md-6 text-left">
@@ -109,7 +109,7 @@
                         </h5>
                     </div>
                     <div class="col-md-6">
-                        <h4 class="text-secondary">Pendapatan : Rp{{ number_format(($jumlah * $harga), 0, ",", ".") }}</h4>
+                        {{-- <h4 class="text-secondary">Pendapatan : Rp{{ number_format(($jumlah * $harga), 0, ",", ".") }}</h4> --}}
                     </div>
                 </div>
             </div>
