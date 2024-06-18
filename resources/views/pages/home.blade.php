@@ -70,15 +70,15 @@ $(function () {
         type: '{!! $chart !!}',
         data: {
             labels: {!! $arrKategori !!},
-            label: 'Tabel Grafik',
             datasets: [
                 {
                     @if ($chart=='bar')
                     backgroundColor: '#007bff',
                     @endif
                     borderColor: '#007bff',
-                    data: {!! $arrJumlah !!}
-                },
+                    data: {!! $arrJumlah !!},
+                    label: 'Tabel Grafik',
+                }
             ]
         },
         options: {
