@@ -26,8 +26,8 @@ class laporanC extends Controller
     public function cetak(Request $request)
     {
         // try{
-            $tanggalawal = $request->tanggalawal." 01:00";
-            $tanggalakhir = $request->tanggalakhir." 23:59";
+            $tanggalawal = $request->tanggalawal;
+            $tanggalakhir = $request->tanggalakhir;
 
             $pemasukan = pemasukanM::whereBetween("tanggal", [$tanggalawal, $tanggalakhir])
             ->orderBy("tanggal", "desc")
