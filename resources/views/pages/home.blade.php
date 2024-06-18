@@ -70,6 +70,7 @@ $(function () {
         type: '{!! $chart !!}',
         data: {
             labels: {!! $arrKategori !!},
+            label: 'Tabel Grafik',
             datasets: [
                 {
                     @if ($chart=='bar')
@@ -77,7 +78,7 @@ $(function () {
                     @endif
                     borderColor: '#007bff',
                     data: {!! $arrJumlah !!}
-                }
+                },
             ]
         },
         options: {
@@ -106,4 +107,7 @@ $(function () {
 })
 
 </script>
+@if ()
+
+@endif
 @endsection
