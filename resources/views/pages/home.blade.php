@@ -4,10 +4,38 @@
 @section("activedashboard", "active")
 @section("judul", "Dashboard")
 @section('content')
+<div class="row">
+    <div class="col-lg-6 col-6">
 
+        <div class="small-box bg-primary rounded-lg p-3 mb-4 text-light">
+            <div class="inner">
+                <h3 class="text-light">Rp{{ number_format($total->sum("total"), 0, ",", ".") }}</h3>
+                <p>SALDO PENDAPATAN</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-6 col-6">
+
+        <div class="small-box bg-primary rounded-lg p-3 mb-2 text-light">
+            <div class="inner">
+                <h3 class="text-light">{{ $total->sum("jumlahbarang") }}</h3>
+                <p>TOTAL BARANG TERJUAL</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
 
 <div class="card">
     <div class="card-header border-0">
+
+
+
+
         <div class="row">
             <div class="col-md-7">
                 <h5 class="">Chart

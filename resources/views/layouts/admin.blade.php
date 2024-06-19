@@ -34,6 +34,10 @@
             text-align: left !important;
         }
 
+        .bg-primary {
+            background: #1E90FF !important;
+        }
+
 </style>
 
 </head>

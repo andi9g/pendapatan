@@ -38,8 +38,15 @@ class HomeController extends Controller
                 $query->where("idkategori", $k->idkategori);
             })
             ->count();
+
+
             $arrJumlah[] = (int) $pemasukan;
         }
+
+        $total = pemasukanM::where("tanggal", $tanggal)
+        ->selectRaw("hargabarang * jumlahbarang as total")
+        ->selectRaw("jumlahbarang")->get();
+        // dd($total);
 
         $arrJumlah = json_encode($arrJumlah);
         $arrKategori = json_encode($arrKategori);
@@ -49,6 +56,7 @@ class HomeController extends Controller
             "arrKategori" => $arrKategori,
             "tanggal" => $tanggal,
             "chart" => $chart,
+            "total" => $total,
         ]);
     }
 }

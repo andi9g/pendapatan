@@ -97,11 +97,13 @@
         <div class="card-body">
             <div class="text-right">
                 @php
-
-                    // $jumlah = $pemasukan->sum("jumlahbarang");
-                    // $harga = $pemasukan->sum("hargabarang");
-
+                    $total = 0;
                 @endphp
+                @foreach ($pemasukan as $item)
+                @php
+                    $total = $total + ($item->jumlahbarang * $item->hargabarang);
+                @endphp
+                @endforeach
                 <div class="row">
                     <div class="col-md-6 text-left">
                         <h5 class="">Hari/Tanggal :
@@ -109,7 +111,7 @@
                         </h5>
                     </div>
                     <div class="col-md-6">
-                        {{-- <h4 class="text-secondary">Pendapatan : Rp{{ number_format(($jumlah * $harga), 0, ",", ".") }}</h4> --}}
+                        <h4 class="text-secondary">Pendapatan : Rp{{ number_format(($total), 0, ",", ".") }}</h4>
                     </div>
                 </div>
             </div>
