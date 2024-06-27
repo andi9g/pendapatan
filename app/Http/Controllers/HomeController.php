@@ -43,7 +43,8 @@ class HomeController extends Controller
             $arrJumlah[] = (int) $pemasukan;
         }
 
-        $total = pemasukanM::where("tanggal", $tanggal)
+        $total = pemasukanM::has('barang')
+        ->where("tanggal", $tanggal)
         ->selectRaw("hargabarang * jumlahbarang as total")
         ->selectRaw("jumlahbarang")->get();
         // dd($total);

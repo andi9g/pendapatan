@@ -82,11 +82,11 @@
                 @endphp
                 <tr>
                     <td ><center>{{ $loop->iteration  }}</center></td>
-                    <td class="text-center">{{ $item->barang->kdbarang }}</td>
+                    <td class="text-center">{{ empty($item->barang->kdbarang)?"0000":$item->barang->kdbarang }}</td>
                     <td>
                         <center>
                             <b>
-                                {{ $item->barang->namabarang }}
+                                {{ empty($item->barang->namabarang)?"Data master tidak ditemukan":$item->barang->namabarang }}
                             </b>
                         </center>
                     </td>
@@ -129,6 +129,20 @@
                 </th>
             </tr>
         </tfoot>
+    </table>
+
+    <br>
+
+    <table width="100%">
+        <tr>
+            <td width="65%"></td>
+            <td align="center">
+                <p>Tanjungpinang, {{ \Carbon\Carbon::parse(date("Y-m-d"))->isoFormat("dddd, DD MMMM Y") }}</p>
+                <p>ADMIN</p>
+                <br><br><br>
+                <p>.......................</p>
+            </td>
+        </tr>
     </table>
 </body>
 </html>

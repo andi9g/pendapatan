@@ -29,7 +29,8 @@ class laporanC extends Controller
             $tanggalawal = $request->tanggalawal;
             $tanggalakhir = $request->tanggalakhir;
 
-            $pemasukan = pemasukanM::whereBetween("tanggal", [$tanggalawal, $tanggalakhir])
+            $pemasukan = pemasukanM::has("barang")
+            ->whereBetween("tanggal", [$tanggalawal, $tanggalakhir])
             ->orderBy("tanggal", "desc")
             ->get();
 
